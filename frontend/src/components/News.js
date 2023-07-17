@@ -56,7 +56,7 @@ export default class News extends Component {
       
 
     PreviousClick = async ()=>{
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+        let url = `http://localhost:5001/news?country=${this.props.country}&category=${this.props.category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
         this.setState({loading : true})
         let data = await fetch(url);
         let parsedData = await data.json();
@@ -70,7 +70,7 @@ export default class News extends Component {
     NextClick = async ()=>{
         if (!(this.state.page + 1>Math.ceil(this.state.totalResults/this.props.pageSize))) {
             
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+        let url = `http://localhost:5001/news?country=${this.props.country}&category=${this.props.category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         this.setState({loading : true})
         let data = await fetch(url);
         let parsedData = await data.json();
