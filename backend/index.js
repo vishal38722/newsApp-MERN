@@ -5,11 +5,9 @@ import cors from 'cors';
 const app = express();
 const PORT = 5001;
 
-// Enable CORS
 app.use(cors());
 
-// API endpoint to fetch news data
-app.get('/news', async (req, res) => {
+app.get('/', async (req, res) => {
   const { country, category, pageSize, page } = req.query;
   const apiKey = '0c6978c3826740158dab336b6eff91d9';
 
@@ -25,7 +23,6 @@ app.get('/news', async (req, res) => {
   }
 });
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
