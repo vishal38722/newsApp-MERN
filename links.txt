@@ -1,0 +1,6 @@
+If the installation of backend dependencies using npm gets stuck, there are a few troubleshooting steps you can try any one of them which works for you:        
+https://stackoverflow.com/questions/16873973/npm-install-hangs
+1. npm cache clean --force
+2. npm set registry https://registry.yarnpkg.com/
+3. npm+ config set registry https://registry.npmjs.org/
+
