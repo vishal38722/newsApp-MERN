@@ -7,7 +7,11 @@ const PORT = 5001;
 
 app.use(cors());
 
-app.get('/', async (req, res) => {
+app.get("/", (req, res) => {
+  res.send(`Server is running on PORT ${PORT}`);
+})
+
+app.get('/news', async (req, res) => {
   const { country, category, pageSize, page } = req.query;
   const apiKey = '0c6978c3826740158dab336b6eff91d9';
 
@@ -24,5 +28,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

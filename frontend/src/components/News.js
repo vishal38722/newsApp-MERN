@@ -26,7 +26,7 @@ export default class News extends Component {
 
     async componentDidMount() {
         const { country, category, pageSize } = this.props;
-        const apiUrl = `http://localhost:5001?country=${country}&category=${category}&pageSize=${pageSize}&page=1`;
+        const apiUrl = `http://localhost:5001/news?country=${country}&category=${category}&pageSize=${pageSize}&page=1`;
 
         try {
             this.setState({ loading: true });
@@ -49,7 +49,7 @@ export default class News extends Component {
             const { country, category, pageSize } = this.props;
             const { page } = this.state;
 
-            const url = `http://localhost:5001?country=${country}&category=${category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${page - 1}&pageSize=${pageSize}`;
+            const url = `http://localhost:5001/news?country=${country}&category=${category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${page - 1}&pageSize=${pageSize}`;
 
             this.setState({ loading: true });
 
@@ -72,7 +72,7 @@ export default class News extends Component {
             const { page, totalResults } = this.state;
 
             if (!(page + 1 > Math.ceil(totalResults / pageSize))) {
-                const url = `http://localhost:5001?country=${country}&category=${category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${page + 1}&pageSize=${pageSize}`;
+                const url = `http://localhost:5001/news?country=${country}&category=${category}&apiKey=0c6978c3826740158dab336b6eff91d9&page=${page + 1}&pageSize=${pageSize}`;
 
                 this.setState({ loading: true });
 
