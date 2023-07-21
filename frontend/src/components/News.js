@@ -26,7 +26,7 @@ export default class News extends Component {
 
     async componentDidMount() {
         const { country, category, pageSize } = this.props;
-        const apiUrl = `http://localhost:5001/news?country=${country}&category=${category}&pageSize=${pageSize}&page=1`;
+        const apiUrl = `https://newsapp-backend-vj3k.onrender.com/news?country=${country}&category=${category}&pageSize=${pageSize}&page=1`;
 
         try {
             this.setState({ loading: true });
@@ -107,7 +107,10 @@ export default class News extends Component {
                     })}
 
                 </div>
-                <div className="container my-4 d-flex justify-content-between">
+                <div
+                    style={{ position: "fixed", bottom: "0px", left: "50%", transform: "translateX(-50%)", display: "flex", justifyContent: "center", alignItems: "center" }}
+                    className="container my-4 d-flex justify-content-between"
+                >
                     <button disabled={this.state.page <= 1} type="button" className="btn btn-dark" onClick={this.PreviousClick}>&larr; Previous</button>
                     <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)} type="button" className="btn btn-dark" onClick={this.NextClick}>Next &rarr;</button>
                 </div>
