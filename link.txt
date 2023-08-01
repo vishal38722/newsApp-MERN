@@ -1,0 +1,3 @@
+Now we can not make API request directly from browse, we need to create a server for that
+https://stackoverflow.com/questions/62157026/error-426-from-newsapi-org-once-i-deployed-my-site-on-netlify
+
